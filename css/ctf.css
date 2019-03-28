@@ -1,0 +1,164 @@
+body {
+	font-family: Georgia, Garamond, serif;
+	font-size: 12px;
+	color: #000001;
+	background-color: #000000;
+	background-image: url(mur_fond.jpg);
+	background-position: top left;
+	background-repeat: repeat-x;
+}
+
+h1 {
+	margin: 0px;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+h2 {
+	margin: 30px 0px 0px 0px;
+	padding: 25px 0px 0px 0px;
+	height: 75px;
+	text-align: center;
+	font-size: 16px;
+}
+
+h3 {
+	color: #4A0000;
+	padding: 30px 0px 0px 42px;
+	margin: 10px 0px 0px 0px;
+	height: 53px;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+h3:first-letter {
+	font-size: 2px;
+}
+
+p {
+	margin: 0px;
+}
+
+a {
+	color: #960000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+abbr {
+	text-decoration: overline;
+	color: #9A7339;
+}
+
+.page-wrapper {
+	position: absolute;
+	top: 0px;
+	left: 215px;
+	width: 555px;
+	background: url(fond-centre.jpg);
+	background-position: top left;
+	background-repeat: repeat-y;
+	z-index: 10;
+}
+
+.intro {
+	width: 550px;
+	border-top: 0px solid black;
+	margin: 0px;
+}
+
+.welcome, .summary {
+	padding: 0px 0px 0px 15px;
+	width: 385px;
+	margin-top: 15px;
+}
+
+.intro {
+	padding: 0px 0px 0px 15px;
+	width: 385px;
+	margin: 15px 0 0 15px;
+}
+
+.supporting {
+	padding: 0px 15px 0px 15px;
+}
+
+.benefits, .participation {
+	width: 500px;
+	padding: 0px 0px 0px 15px;
+}
+
+.summary	 H3 {
+	background-image: url(T.gif);
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+.welcome	H3 {
+	background-image: url(R.gif);
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+.please	H3 {
+	background-image: url(P.gif);
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+.requirements {
+	background: url(author.jpg) bottom left no-repeat;
+	width: 420px;
+	padding: 0px 70px 125px 70px;
+	margin: 0px 0px 0px -15px;
+}
+
+.requirements	H3 {
+	background: url(R.gif) top left no-repeat;
+}
+
+.navbar .nav.pull-right {
+	float: right;
+	margin-right: 98px; /*set margin this way in your custom styesheet*/
+}
+
+footer	A {
+	color: #D6AE73
+}
+
+footer {
+	margin-top: -100px;
+	text-align: center;
+	height: 75px;
+}
+
+.extra1 {
+	background: url(bella.jpg) top left no-repeat;
+	width: 119px;
+	height: 600px;
+	position: absolute;
+	left: 90px;
+	top: 0px;
+}
+
+.extra2 {
+	background: url(candel.jpg) top left no-repeat;
+	width: 126px;
+	height: 600px;
+	position: absolute;
+	top: 0px;
+	left: 775px;
+	z-index: 2;
+}
+
+table, th, td {
+	border: 1px solid black;
+	font-family: Georgia, Garamond, serif;
+	font-size: 12px;
+	color: #000001;
+}

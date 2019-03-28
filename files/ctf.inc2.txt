@@ -1,0 +1,78 @@
+<?php
+
+
+session_start(); // Creates a 'Full Path Disclosure' vuln.
+// Include configs
+require_once CTF_WEB_PAGE_TO_ROOT . '/ctf/config/config.inc.php';
+
+
+// Database Management -
+
+function ctfDatabaseConnect() {
+  global $con;
+  $con = mysqli_connect('localhost', 'root',  '9Shiva!!','ctf') or die("Some error occurred during connection " . mysqli_error($con));
+}
+
+// -- END (Database Management)
+
+function ctfRedirect( $pLocation ) {
+  session_commit();
+  header( "Location: {$pLocation}" );
+  exit;
+}
+
+// Start session functions --
+
+function &ctfSessionGrab() {
+  if( !isset( $_SESSION[ 'ctf' ] ) ) {
+    $_SESSION[ 'ctf' ] = array();
+  }
+  return $_SESSION[ 'ctf' ];
+}
+
+// Start message functions --
+
+function ctfMessagePush( $pMessage ) {
+  $ctfSession =& ctfSessionGrab();
+  if( !isset( $ctfSession[ 'messages' ] ) ) {
+    $ctfSession[ 'messages' ] = array();
+  }
+  $ctfSession[ 'messages' ][] = $pMessage;
+}
+
+
+function ctfMessagePop() {
+  $ctfSession =& ctfSessionGrab();
+  if( !isset( $ctfSession[ 'messages' ] ) || count( $ctfSession[ 'messages' ] ) == 0 ) {
+    return false;
+  }
+  return array_shift( $ctfSession[ 'messages' ] );
+}
+
+
+function messagesPopAllToHtml() {
+  $messagesHtml = '';
+  while( $message = ctfMessagePop() ) {   // TODO- sharpen!
+    $messagesHtml .= "<div class=\"message\">{$message}</div>";
+  }
+
+  return $messagesHtml;
+}
+
+// --END (message functions)
+
+//Encryption functions
+
+function encrypt ($text) {
+	$key = "This is the secret ctf key";
+	$iv = "abcdefghijklmnopqrstuvwxyz012345";
+	return base64_encode(mcrypt_encrypt (MCRYPT_RIJNDAEL_256, $key, $text, MCRYPT_MODE_ECB, $iv));
+}
+
+function decrypt ($secret) {
+	$key = "This is the secret ctf key";
+	$iv = "abcdefghijklmnopqrstuvwxyz012345";
+	return mcrypt_decrypt (MCRYPT_RIJNDAEL_256, $key, $secret, MCRYPT_MODE_ECB,$iv );
+}
+
+?>
