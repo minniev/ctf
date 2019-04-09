@@ -12,7 +12,7 @@ $DBMS = 'MySQL';
 $_ctf = array();
 $_ctf['db_server']   = '127.0.0.1';
 $_ctf[ 'db_database' ] = 'ctf';
-$_ctf[ 'db_user' ]     = 'root';
-$_ctf[ 'db_password' ] = '9Shiva!!';
+$_ctf[ 'db_user' ]     = ini_get("mysql.default.user");
+$_ctf[ 'db_password' ] = ini_get("mysql.default.password");
 $_ctf['level4'] = "1f112cfdcb3506a0d4fe9cb571627269";
 ?>

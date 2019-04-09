@@ -1,5 +1,5 @@
 <?php
-
+//https://stackoverflow.com/questions/97984/how-to-secure-database-passwords-in-php
 
 session_start(); // Creates a 'Full Path Disclosure' vuln.
 // Include configs
@@ -10,7 +10,7 @@ require_once CTF_WEB_PAGE_TO_ROOT . '/ctf/config/config.inc.php';
 
 function ctfDatabaseConnect() {
   global $con;
-  $con = mysqli_connect('localhost', 'root',  '9Shiva!!','ctf') or die("Some error occurred during connection " . mysqli_error($con));
+  $con = mysqli_connect('localhost', ini_get("mysql.default.user"),  ini_get("mysql.default.password"),'ctf') or die("Some error occurred during connection " . mysqli_error($con));
 }
 
 // -- END (Database Management)

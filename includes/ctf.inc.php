@@ -28,8 +28,8 @@ function ctfVersionGet() {
 
 function ctfDatabaseConnect() {
   global $con, $pdo;
-  $con = mysqli_connect('localhost', 'root',  '9Shiva!!','ctf') or die("Some error occurred during connection " . mysqli_error($con));
-  $pdo = new PDO ("mysql:host=localhost;dbname=ctf","root", "9Shiva!!");
+  $db = mysqli_connect(ini_get("mysql.default.user"),ini_get("mysql.default.password"),ini_get("mysql.default.host"));
+  $pdo = new PDO ("mysql:host=localhost;dbname=ctf",ini_get("mysql.default.user"), ini_get("mysql.default.password"));
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   		
 }

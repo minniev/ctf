@@ -10,7 +10,7 @@ require_once CTF_WEB_PAGE_TO_ROOT . '/ctf/config/config.inc.php';
 
 function ctfDatabaseConnect() {
   global $con;
-  $con = mysqli_connect('localhost', 'root',  '9Shiva!!','ctf') or die("Some error occurred during connection " . mysqli_error($con));
+  $con = mysqli_connect('localhost', ini_get("mysql.default.user"),  ini_get("mysql.default.user"),'ctf') or die("Some error occurred during connection " . mysqli_error($con));
 }
 
 // -- END (Database Management)
